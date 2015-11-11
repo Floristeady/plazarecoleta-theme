@@ -19,7 +19,6 @@ jQuery(function($){
   	function onLoadAndResize(){ 
 	  	 homeSlider();
 	  	 homeHeight();
-	  	 menuMobile();
 	  	 pageGallery();
 	  	 pageCarousel();
 	  	 fancyboxImg();
@@ -95,7 +94,6 @@ jQuery(function($){
 			},
 			afterShow: function() {
 		        if ('ontouchstart' in document.documentElement){
-		            //$('.fancybox-nav').css('display','none');
 		            $('.fancybox-wrap').swipe({
 		                swipe : function(event, direction) {
 		                    if (direction === 'left' || direction === 'up') {
@@ -113,14 +111,15 @@ jQuery(function($){
 	/*
 	* Menu principal mobile
 	*/
-	function menuMobile() {
+	function menuMobile() {	    
+	    $(document).off('click', '.open').on('click', '#button-mobile',function(e) {
+	        $('#access.mobile').slideToggle();
+	        $('#button-mobile').toggleClass('active');
+	    }); 
+	}
 	
-	   $('header')      
-	      .find('a.btn-menu')
-	         .bind('click focus', function(){
-	            $(this).toggleClass('expanded');
-	            $('#access').slideToggle();
-	         });   
+	function print() {
+	    window.print();
 	}
   
 /************************* 
@@ -130,6 +129,7 @@ jQuery(function($){
 
     onLoadAndResize();
     getbrowserwidth();
+    menuMobile();
         
    });
    
@@ -137,68 +137,6 @@ jQuery(function($){
      onLoadAndResize();
    });
   
-});
-
-
-
-$(function() {
-  
-  /*
-  * Galerías
-  
-  $('#project-gallery').flexslider({
-     animation: "slide",
-     controlNav: "thumbnails",
-     startAt: 0, 
-     slideshow: false,
-     directionNav: false,
-     start: function(slider){
-       $('#product-gallery div').removeClass('loading');
-     }
-    });
-    
-   $('#entorno-gallery').flexslider({
-    animation: "fade",
-    slideshow: true,
-    controlNav: false,
-    directionNav: true,
-	keyboardNav: true,
-	slideshowSpeed: 7000,
-	pauseOnHover: false,	 				
-	animationLoop: true
-  });
-  
-  $('.emplazamiento-gallery').flexslider({
-    animation: "fade",
-    slideshow: true,
-    controlNav: false,
-    directionNav: true,
-	keyboardNav: true,
-	slideshowSpeed: 7000,
-	pauseOnHover: false,	 				
-	animationLoop: true
-  });
-  
-  $('#page-gallery').flexslider({
-    animation: "fade",
-    slideshow: true,
-    controlNav: false,
-    directionNav: true,
-	keyboardNav: true,
-	slideshowSpeed: 7000,
-	pauseOnHover: false,	 				
-	animationLoop: true
-  });
-   
-   $('.carousel-gallery').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    controlNav: false,
-    itemWidth: 145,
-    itemMargin: 5
-  });
-  */
-   
 });
 
 

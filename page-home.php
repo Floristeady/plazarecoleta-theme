@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="content-full" class="homepage">
 
 
-<?php if ( have_posts() ) { ?>
+<?php if ( have_posts() ) : ?>
 	
 	<div id="home-gallery" class="flexslider"> 
 				
@@ -53,7 +53,7 @@ get_header(); ?>
 						} 
 						endwhile; ?>
 
-				<?php  } ?>
+				<?php  endif; ?>
 				
 				<?php wp_reset_postdata();?>	
 

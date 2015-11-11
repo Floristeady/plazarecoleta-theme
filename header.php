@@ -60,9 +60,21 @@
 			  
 					<h2><?php bloginfo( 'description' ); ?></h2>
 				</div>
-				<a class="btn-menu" href="javascript:void(0);"><?php _e('Menú', 'plazarecoleta') ?></a>
-				<nav id="access" role="navigation" class="clearfix">
+				<a id="button-mobile" href="javascript:void(0);">
+					<span class="bars">
+	                	<div class="top-bar-button"></div>
+				        <div class="middle-bar"></div>
+				   	    <div class="bottom-bar"></div>
+	               </span>
+			       <span class="text"><?php _e('Menú', 'plazarecoleta') ?></span>
+			    </a>
+			    
+			    <nav id="access" role="navigation" class="clearfix">
 				  	<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				</nav><!-- #access -->
+			    
+				<nav id="access" role="navigation" class="mobile">
+				  	<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'third' ) ); ?>
 				</nav><!-- #access -->
 				
 				<?php get_sidebar('contact'); ?>

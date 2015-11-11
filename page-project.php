@@ -16,6 +16,7 @@ get_header(); ?>
 		<?php $rows = get_field('page_gallery');  ?>				
 		<?php if($rows) { ?>
 		<div id="page-gallery" class="flexslider">
+		<?php include('include/share.php'); ?>	
 		<?php echo '<ul class="slides">';
 		 
 			foreach($rows as $row) { ?>
@@ -27,7 +28,10 @@ get_header(); ?>
 		    
 			<?php }; ?> 
 		</div>
+		
 		<?php  echo '</ul>'; }  ?>
+		
+		
 
 		<?php
 			the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header>' ); ?>
@@ -54,7 +58,7 @@ get_header(); ?>
 
 			 		<li> 
 				 		<?php if( $row['file_doc']  ): ?>
-			 				<a target="_blank"  title="<?php echo $row['nombre_del_proyecto'] ?>" href="<?php echo $row['file_doc'] ?>"><i class="icon-doc"></i><?php _e('DESCARGAR ', 'plazarecoleta') ?><?php echo $row['name_doc'] ?></a>
+			 				<a target="_blank"  title="<?php echo $row['nombre_del_proyecto'] ?>" href="<?php echo $row['file_doc'] ?>"><?php _e('DESCARGAR ', 'plazarecoleta') ?><?php echo $row['name_doc'] ?></a>
 			 			<?php endif;?>
 			 		</li>
 

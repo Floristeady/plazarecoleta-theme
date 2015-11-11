@@ -8,13 +8,14 @@
 
 get_header(); ?>
 
-<div id="content" class="page-project">
+<div id="content">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<div class="thumbnail">
 			<?php the_post_thumbnail( 'gallery-page-image' ); ?>
+			<?php include('include/share.php'); ?>
 		</div>
 		
 		<?php $rows = get_field('page_gallery');  ?>				

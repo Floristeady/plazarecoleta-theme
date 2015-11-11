@@ -411,6 +411,10 @@ a.btn-menu {
 	text-align: center;
 }
 
+#access.mobile, #button-mobile {
+	display: none;
+}
+
 #access ul {
 	padding: 0px;
 	margin: 0px;
@@ -450,8 +454,19 @@ a.btn-menu {
 	color: #a7bf38;
 }
 
+#access li.icon-place.current_page_item:before,  
+#access li.current-page-ancestor:before,
+#access li:hover:before,
+#access li.icon-place:hover:before {
+	opacity: 1;
+}
+
 nav#access ul.sub-menu, nav#access ul.children {
 	display: none;
+}
+
+#access li:hover:before {
+	opacity: 1;
 }
 
 /*
@@ -499,6 +514,38 @@ nav#access ul.sub-menu, nav#access ul.children {
 #nav-top  li.current-page-ancestor a,
 #nav-top  li:hover a {
 	color: #a7bf38;
+}
+
+#nav-top li:before {
+	content: '';
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: .2rem;
+	opacity: .5;
+}
+
+
+#nav-top li:hover:before,
+#nav-top  li.current_page_item:before {
+	opacity: 1;
+}
+
+.icon-place:before {
+	background: url(images/elements/icon-place.svg) no-repeat;
+}
+
+.icon-house:before {
+	background: url(images/elements/icon-house.svg) no-repeat;
+}
+
+.icon-dept:before {
+	background: url(images/elements/icon-dept.svg) no-repeat;
+}
+
+.icon-price:before {
+	background: url(images/elements/icon-price.svg) no-repeat;
 }
 
 /*
@@ -570,7 +617,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 	right: 20px;
 	bottom: .2em;
 	height: 9.5em;
-	width: 22%;
+	width: 28%;
 	z-index: 1000;
 }
 
@@ -579,11 +626,11 @@ nav#access ul.sub-menu, nav#access ul.children {
 	padding: 1.6em 1.8em 1.5em 2em;
 	z-index: 1;
 	height: auto;
-	display: block:
+	display: block;
 }
 
 #home-gallery .text h1, #home-gallery .text h2, #home-gallery .text h3, #home-gallery .text h4, #home-gallery .text h5, #home-gallery .text h6 {
-	font-size: 2em;
+	font-size: 1.8em;
 	color: #565759;
 	margin: 0;
 	text-align: center;
@@ -660,8 +707,9 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #page-gallery {
 	float: left;
-	width: 100%;
+	width: 99.05%;
 	margin: 0 0 2em;
+	position: relative;
 }
 
 #page-gallery li img {
@@ -678,11 +726,37 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #list-documents li {
 	margin: 0 0 1em;
+	font-size: .85em;
+}
+
+#list-documents li:before {
+	background: url(images/elements/icon-pdf.svg) no-repeat;
+	width: 42px;
+	height: 44px;
+	display: inline-block;
+	padding-right: 4px;
+	content: '';
+	vertical-align: middle;
+}
+
+#list-documents li a {
+	color: #2a2d22;
+	text-decoration: none;
+}
+
+#list-documents li a:hover {
+	text-decoration: underline;
+	color: #a7bf38;
 }
 
 /*
  * Page Ubicación
  */
+ 
+.thumbnail {
+	width: 99.2%;
+	position: relative;
+} 
  
 .thumbnail img {
 	width: 100%;
@@ -702,32 +776,121 @@ nav#access ul.sub-menu, nav#access ul.children {
  * Departamentos
  */
 
-#list-projects {
-	margin: 0.2em 0 4em;
+#list-depts {
+	margin: 0.2em auto 4em;
 	padding: 0px;
 	list-style: none;
-	width: 100%;
-	float: left;
+	width: 80%;
 }
 
-#list-projects li.project {	
-	min-height: 460px;
-}
-
-#list-projects li {	
-	background: white;
+#list-depts li {	
+	background: #eff1f5;
 	text-align: center;
 	margin: 0 40px 3em 0px;
 	float: left;
-	padding: 10px 0 0;
+	padding: 0 0 1em;
 	position: relative;
-	width: 246px;
+	width: 250px;
+}
+
+#list-depts li .inner {
+	float: left;
+}
+
+#list-depts li img {
+	width: 100%;
+}
+
+#list-depts li .dept-title.with-m2 {
+    margin: 1.1em 0px 0;
+}
+
+#list-depts li .dept-title a {
+	color: #333333;
+	font-size: 1.1rem;
+}
+
+#list-depts .text h4 {
+	font-family: 'Roboto Slab';
+	color: #737373;
+	font-size: 1rem;
+	margin-top: .2em;
+}
+
+#list-depts li .img {
+	float: left;
+	margin: 0 0 1em;
+}
+
+#list-depts a.img span, .entry-floor .icon-search {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	background-size: 80%;
+	background-image: url(images/elements/icon-more.png);
+	width: 62px;
+	height: 62px;
+	display: block;
+	position: absolute;
+	opacity: 0;
+	left: 0px;
+	opacity: 0;
+	right: 0px;
+	margin: 0 auto;
+	z-index: 10;
+	top: 28%;
+	background-repeat: no-repeat;
+}
+
+#list-depts a:hover.img img,  .entry-floor:hover .icon-search {
+	opacity: 0.5;
+}
+
+#list-depts a:hover.img span,  .entry-floor:hover .icon-search {
+	background-size: 100%;
+	opacity: 1;
 }
 
 
 /*
  * Page Departamento
  */
+ 
+.single-depts .entry-subtitle {
+	text-align: center;
+	width: 60%;
+	margin: 0 auto 2em;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	color: #535556;
+	font-weight: bold;
+}
+
+.single-depts .entry-title.with-subtitle {
+	margin-bottom: 0;
+}
+
+.entry-floor {
+	margin: 1.5em 0 0;
+}
+
+.entry-floor a {
+	text-decoration: none !important;
+}
+
+.entry-floor .text {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	text-transform: uppercase;
+	padding: .2rem 0;
+	font-size: .85em;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	text-align: center;
+	font-family: 'Roboto Slab';
+}
  
 /*
  * Page Subsidios
@@ -736,6 +899,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 #children-content {
 	width: 100%;
 	margin: 0 auto;
+	padding: 0;
 }
  
 #children-content li {
@@ -762,14 +926,88 @@ nav#access ul.sub-menu, nav#access ul.children {
 	line-height: 1.4em;
 }
 
-.page-template-page-children .entry-content-inner {
+.page-template-page-children .entry-content-inner, 
+.single-depts .entry-content-inner {
 	background: #e2e2e2;
 	padding: 2em;
+}
+
+.single-depts .entry-content-inner {
+	padding: 1em 1.5em;
+}
+
+/*
+ * Page Share
+ */
+ 
+
+#share {
+	background: #7d7f81;
+	position: absolute;
+	top:-2.8em;
+	right: .6%;
+	list-style: none;
+	padding: 7px 10px;
+	z-index: 1001;
+}
+
+.page-template-page-location #share {
+	bottom: -18px;
+	right: 0;
+	top: inherit;
+}
+
+ .page-template-page-project #share, .page-template-page-archive #share {
+	bottom: -18px;
+	right: 0;
+	top: inherit; 
+ }
+
+#share:before {
+	content: '';
+	background: url(images/elements/border.svg) no-repeat;
+	width: 16px;
+	height: 38px;
+	display: inline-block;
+	position: absolute;
+	left: -10px;
+	top:0;
+}
+
+#share li {
+	display: inline-block;
+	font-size: .8em;
+	margin-right: 10px;
+}
+
+#share li a {
+	color: #fff;
+	text-decoration: underline;
+	letter-spacing: 0.05em;
+}
+
+#share li.icon-email:before {
+	background: url(images/elements/icon-email.svg) no-repeat;
+	width: 25px;
+	height: 21px;
+	display: inline-block;
+	content: '';
+	vertical-align: middle;
+}
+
+#share li.icon-print:before {
+	background: url(images/elements/icon-print.svg) no-repeat;
+	width: 25px;
+	height: 21px;
+	display: inline-block;
+	content: '';
+	vertical-align: middle;
 }
 
 /*
  * Page entry-content
  */
+ 
 
 .entry-content {
 	margin: 1em auto 5em;	
@@ -781,7 +1019,8 @@ nav#access ul.sub-menu, nav#access ul.children {
 }
 
 .entry-header {
-	margin-top: 2em;
+	float: left;
+	width: 100%;
 }
 
 .entry-title, .entry-content .entry-excerpt {
@@ -797,9 +1036,23 @@ nav#access ul.sub-menu, nav#access ul.children {
 }
 
 .entry-content ul {
-	margin: .6em 0px 0px 1em;
+	margin: .6em 0px 0px .5em;
 	padding: 0px 0px 20px 12px;
-	list-style: circle;
+	list-style: none;
+}
+
+.entry-content ul li {
+    text-indent: -.7em;
+    padding-left: .3em;
+    margin-bottom: .7em;
+ }
+
+.entry-content ul li:before {
+    content: "• ";
+    font-size: 1.5em;
+    padding-right: .4em;
+    vertical-align: middle;
+    color: #a7bf38; /* or whatever color you prefer */
 }
 
 .entry-content ol {
@@ -1147,251 +1400,179 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 	margin-right: 2%;
 }
 
+.csstransitions #button-mobile {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+/*
+ * button-mobile
+ */
+
+#button-mobile {
+  padding: 1.4em 0.6em .8em;
+  float: right;
+  margin: 0;
+  background: white;
+}
+
+#button-mobile .bars {
+	font-size: 1.2em;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 110px;
+	margin: auto;
+}
+
+#button-mobile .text { 
+	margin-left: 10%;
+}
+
+
+#button-mobile .bars > div {
+	width: 1.6em;
+	height: 3px;
+	margin-bottom: 6px;
+	background: white;
+	border-radius: 1px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */   
+
+/* medium displays  menos de 641px*/  
+@media only screen and (max-width: 40.063em) { 
+	
+}
+
+/* medium displays menos de 767px */
+@media only screen and (max-width: 47.938em) {
+	
+	.full-width,
+		.one_half,
+		.one_third,
+		.two_thirds,
+		.three_fourths,
+		.one_fourth {width: 100%;}
+		.resize, #access, #menu-secondary,
+		#list-depts a.img span, .entry-floor .icon-search {display: none;}
+		.icon-print {display: none !important;}
+		
+		.for-mobile {display: block;}
+		
+	  #header {
+		  position: relative; 
+		  width: 100%; 
+		  height: auto; 
+		  min-height: inherit;
+		  padding: 0;
+		  margin: 0;}
+	  #content {padding-left: 0; width: 100%;}
+	  #site-title {padding: 1em 0 1em;}
+	  #site-title h1 {margin: 0em auto;}
+	  
+	  #header .inner {
+		  width: 100%;
+		  float: left;
+	  }
+	  
+	  #button-mobile {
+		  font-size: 1.2em; 
+		  text-transform: uppercase; 
+		  text-align: center; 
+		  color: white;
+		  background-color: rgba(119, 150, 46, .9);
+		  padding: 1em 0; width: 100%; 
+		  display: inline-block;
+		  font-weight: bold; }
+	  
+	  #access {padding: 0;}
+	  #access li { 
+		  float: none; 
+		  padding: .7em 0;}
+	  #access.active {display: block;}
+	  
+	  #home-gallery .info {
+		margin: 0 auto;
+		width: 90%;}
+		
+	  .home .backstretch {display: block !important;}
+      .home .flexslider .slides img.this {display: none; position: absolute;}
+      .home .flex-control-nav {display: none;}
+      
+      #page-gallery {width: 100%;}
+      #list-depts li {width: 40%; margin: 0 10% 3em 0px;}
+      #list-depts li { min-height:470px;}
+      #list-depts li img {width: 100%;}
+      
+      #children-content li {
+	      width: 82%; 
+	      margin-bottom: 20px;}
+	      
+	  #share {
+		  top: 0;
+		  margin: 0;
+		  right: 0;}
+	  
+	  form.wpcf7-form {width: 100%;}
+		  
+	  .home #footer {bottom: -3.8em;}
+	  #footer-content p {font-size: .8rem;}
+	
+}
+
+/* medium displays menos de 960px */
+@media only screen and (max-width: 60em) { 
+	#nav-top li {
+		padding: 1.3em 1.2em;
+	}
+	
+	#nav-top li:before {
+		display: none;
+	}
+}
+
+/* large displays menos de 1025px */
+@media only screen and (max-width: 64.063em) {
+	#home-gallery .text h1 {font-size: 1.4em;}
+	
+}
+
+/* large displays más de 960px */
+@media only screen and (max-width: 60em) {
+
+	a {
+	 -webkit-transition: color .3s ease, background-color .3s ease;
+	  -moz-transition: color .3s ease, background-color .3s ease;
+	  -o-transition: color .3s ease, background-color .3s ease;
+	  -ms-transition: color .3s ease, background-color .3s ease;
+	  transition: color .3s ease, background-color .3s ease;
+	}
+}
+
+/* large displays más de 1025px */
+@media only screen and (min-width: 64.063em) { 
+	#home-gallery .info {
+		width: 25%;
+	}
+}
+
+
 
 /* ==========================================================================
    Media Queries for Responsive Design. 
    	and (orientation : portrait)
     and (orientation: landscape)
    ========================================================================== */
-
-	@media only screen and (min-width: 35em) {
-	    /* Style adjustments for viewports that meet the condition */
-	}
 	
 	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 	       only screen and (min-resolution: 144dpi) {
-	    /* Style adjustments for high resolution devices */
-	          .backstretch img{ height: 120% !important;}
-	          .backstretch {height: 110% !important;}
+		   /* Style adjustments for high resolution devices */
+	        .backstretch img{ height: 120% !important;}
+	        .backstretch {height: 110% !important;}
 	}
-
-/* #Tablet (Portrait)
-  ================================================== */  
-
-	 /* Note: Design for a width of 768px */
-    @media only screen and (min-width: 768px) and (max-width: 969px) and (orientation : portrait){ 
-		
-		  #info {display: none;}
-		  
-		  nav#access li a {font-size: 1em;}
-	      
-	      #header {width: 20%;}
-	      #content {padding-left: 24.4%;}
-	      
-	      h1.page-title, h1.section-title, .project-top {min-width: inherit;}
-	      #submenu li a, #submenu li.current a {float: left;margin:0 0.4em 0em 0; padding: 0.4em; border: 1px solid transparent;}
-	      .projectsale #submenu li.current a, .projectsale #submenu li.current a, .projectsale #submenu li:hover a {border: 1px solid #595959;padding: 0.4em;}
-	      a.download-pdf {font-size: 0.8em;}
-	      
-		  #list-projects li {width: 40%;}
-		  #list-projects li img {width: 100% !important;}
-		  #list-projects li .logo-project {height:auto;}
-		  
-		  #home-gallery .info {width: 80%;}
-	
-		  #breadcrumbs {margin-left: 20%;}
-		  
-		  .carousel-gallery, #section-2 .text, #entorno-gallery {width: 98%;}
-		  #plantas .value {font-size: 1.2em;}
-		  #plantas ul li { width: 96%;}
-	      #plantas li .img {width: 50%;}
-	      #plantas li .img img {width: 100%;}
-	      #plantas .img span {display: none;}
-	      
-	      .entry-content .wpcf7 form p {width: 96%;}
-	      .wpcf7 form textarea {width: auto;}
-	      
-	      #list-documents li {width: 96%; min-height: auto;padding: 1.5%;border-bottom: 1px solid #b0afae;border-right: none;}
-	      
-	       .projectready #project-gallery .slides img, .projectsale #project-gallery .slides img {height: 220px;}
-	       #footer-content {float: left;width: 25%;}
-	       #nav-footer li {padding: 0 0.4em;}
-
-	}
-	
-/* #Tablet (landscape) 
-================================================== */ 
-	
-	@media all and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape) { 
-		  /* Style adjustments for landscape mode goes here */
-		  body {
-			  font-size: 0.8em;
-		  }
-		  #header {width: 20%;}
-		  #content {padding-left: 24.4%;}
-		  #site-title {padding: 1em 0 0;}
-		  .logo img {max-width: 70%;}
-		  #header {padding-bottom: 2.8em;}
-		  #footer {height: 2.8em;}
-		  #breadcrumbs {margin-left: 20%;}
-		  
-		   #home-gallery .info {width: 80%; bottom: 6em;}
-		   #home-gallery .text {height: 7.5em;}
-		  
-		  h1.page-title, h1.section-title, .project-top {min-width: inherit;}
-		  #submenu li a, #submenu li.current a {float: left;margin:0 0.4em 0em 0; padding: 0.4em; border: 1px solid transparent;}
-		  .projectsale #submenu li.current a, .projectsale #submenu li.current a, .projectsale #submenu li:hover a {border: 1px solid #595959;padding: 0.4em;}
-		   a.download-pdf {font-size: 0.8em;}
-		  
-		  nav#access li {padding: 0.8em 0;}
-		  nav#access li a {font-size: 1em; }
-		  #list-projects li {width: 30%;margin: 0 3% 3em 0px; min-width: 15em;}
-		  #list-projects li img {width: 100% !important;}
-		  #list-projects li .logo-project {height:auto;}
-		  
-		  #list-projects li.project {min-height: 31em;}
-		  
-		  article.projectsale .inner {margin-top: 11em;}
-		  .carousel-gallery, #section-2 .text, #entorno-gallery {width: 98%;}
-		  #plantas ul li { width: 40%;}
-		  #plantas li .img {width: 50%;}
-	      #plantas li .img img {width: 100%;}
-		  #plantas li p, #plantas li h5 {font-size: 0.74em; line-height: 1.4em;}
-		  #plantas .value {font-size: 1em; padding:  0.6em;}
-		  
-		  #section-7 {height: 48em; min-height: 48em;}
-		  #list-projects li.project-ready {min-height: 24em;}
-		  
-		  .entry-content .wpcf7 form p {width: 96%;}
-	      .wpcf7 form textarea {width: auto;}
-		  
-		  #info h4 {display: none;}
-		  #info .textwidget {font-size: 0.8em;}
-		  .projectready #project-gallery .slides img, .projectsale #project-gallery .slides img {height: 240px;}
-		  #form-project form textarea {height: 50px;}
-		  #form-project p {margin: 0.5em 0 0.5em;}
-		  .acf-map {height: 250px;}
-		  #entorno-gallery img {height: 250px;}
-		  #entorno-gallery {width: 27em;}
-		  
-		  #list-documents li {width: 96%; min-height: auto;padding: 1.5%;border-bottom: 1px solid #b0afae;border-right: none;}
-		  #footer {position: fixed; bottom: 0px;}
-		  
-	 }
-
-
-/*  #Mobile (Portrait) 
-================================================== */
-    
-    /* Note: Design for a width of 320px */
-    @media only screen and (max-width: 767px) { 
-    html {
-	  font-size: 100%; 
-	  overflow-y: scroll; 
-	  -webkit-text-size-adjust: 100%; 
-	  -ms-text-size-adjust: 100%;
-	}
-    
-      .full-width,
-		.one_half,
-		.one_third,
-		.two_thirds,
-		.three_fourths,
-		.one_fourth {width: 100%;}
-		.resize {display: none;}
-		
-		.for-mobile {display: block;}
-	  
-	  #content {padding-left:0; width: 96%; padding: 0 2%;}
-	  #container {min-height: inherit;}
-	  .single #content {width:96%;}
-	  
-	  #header {position: relative; width: 100%; height: auto; min-height: inherit;padding: 0;}
-	  #site-title {padding: 1em 0 1em;}
-	  #site-title h1 {margin: 0em auto;}
-	  a.btn-menu {font-size: 1.2em; text-transform: uppercase; text-align: center; background-color: rgba(180,180,180,0.8);padding: 1em 0; width: 100%; display: inline-block;font-weight: bold; }
-	  nav#access {display: none;}
-
-      nav#access { clear: left; width: 100%;}
-      nav#access li { float: none;}
-      #submenu li a, #submenu li.current a {float: left;margin:0 0.4em 0em 0; padding: 0.4em; border: 1px solid transparent;}
-	  .projectsale #submenu li.current a, .projectsale #submenu li.current a, .projectsale #submenu li:hover a {border: 1px solid #595959;padding: 0.4em;}
-      .projectsale #submenu li:hover a {border: none;}
-	  
-	  #main {padding: 0;}
-      #home-gallery {height: auto;overflow: hidden;}
-      #home-gallery .info {width: 100%; bottom: 5em;}
-      #home-gallery .text p {font-size: 1em;}
-      
-      #home-gallery .logo-inicio {display: none;}
-      #home-gallery .text h1, #home-gallery .text h2, #home-gallery .text h3, #home-gallery .text h4, #home-gallery .text h5, #home-gallery .text h6 {font-size: 1.6em;}
-      
-      .home .backstretch {display: block !important;}
-      .home .flexslider .slides img.this {display: none; position: absolute;}
-      .home .flex-control-nav {display: none;}
-      .projectready .flexslider .slides img, .projectsale .flexslider .slides img {width: 100%;}
-      
-      .project-top {position: relative;min-width:inherit;}
-      h1.entry-title, h1.page-title, h1.section-title {width: auto; min-width: inherit;}
-      article.projectsale {overflow: inherit;}
-      article.projectsale .inner {height: auto; min-height: inherit; overflow: inherit;height: auto !important; margin-top: 0em;}
-      article.projectsale .logo-project {text-align: left;}
-      
-      .project-content {overflow: inherit;height: auto !important;}
-      .projectready .entry-content, .projectsale .entry-content, .projectready #project-gallery, .projectsale #project-gallery, #entorno-gallery, #section-7 .contact-data, .acf-map, .carousel-gallery, #section-2 .text {float: none; width: 96%;}
-      #list-documents li {width: 96%; min-height: auto;padding: 1.5%;border-bottom: 1px solid #b0afae;border-right: none;}
-      
-      #plantas ul li { width: 96%;}
-      #plantas li .img {width: 50%;}
-      #plantas li p, #plantas li h5 {font-size: 0.74em; line-height: 1.4em;}
-      #plantas li .img img {width: 100%;}
-      #plantas .value {font-size: 1em;}
-      #list-projects li .img span, #plantas .img span {display: none;}
-      #list-projects li .img img {width: 100%;}
-      .projectready #project-gallery {margin-bottom: 2em;}
-      
-      .entry-content .wpcf7 form p {width: 96%;}
-      .wpcf7 form textarea {width: auto;}
-      
-      #submenu {margin: 0 0 1em; padding:0.6em 0;width: 100%;}
-      #submenu li {font-size: 0.8em;}
-      #form-project{ width: 90%;float: left;}
-      
-      #list-projects li {width: 40%; margin: 0 10% 3em 0px;}
-      #list-projects li.project { min-height:470px;}
-      #list-projects li.project .img img {width: 100%;}
-      #list-projects li .logo-project {height: auto;}
-      #list-projects li .data {margin-bottom: 3.5em;}
-      
-      .section h3.for-mobile {font-weight: bold; border-bottom: 1px solid #ccc; text-transform: uppercase; padding-bottom: 0.5em; margin-bottom: 1em; font-size: 1em !important;}
-      .icon-angle-up {float: right;font-size: 1.7em;}
-      
-      .section {height: auto !important; overflow-y: auto; min-height:3em !important;}
-      
-      #footer-content p, 
-      #footer-content .textwidget, 
-      #footer-content li {text-align: center;}
-      
-
-      #footer {position: relative; height: auto; float: left;}
-      .home #footer {position: absolute;}
-      #nav-footer {float: none; width: 90%; margin: 0.6em auto;}
-      #nav-footer ul {margin: 0.6em auto;}
-      #nav-footer li {padding: 0 0.4em 0 0;}
-            
-      #respond, #commentbox ol, #commentbox  {width: 98%; margin-right: 0px;}
-      .fancybox-next span {visibility: visible !important; right: -8px !important;}
-      .fancybox-prev span {visibility: visible !important;left: -8px !important;}
-      .fancybox-overlay {background-color: rgba(0,0,0,0.8) !important; background-image: none !important; overflow-y: scroll;}
-      .fancybox-lock {
-		  overflow: hidden;
-		  margin: 0 !important;
-      }
-      
-      #list-modules li { width: 100%; }
-      #list-modules li .btn-open {background-image: none;}
-	  #list-modules li .text { display: block;}
-	  #list-modules li.close a.title {border-bottom: 1px solid #a0a0a0;}
-	    
-    }
-    
-    /* #Mobile (Landscape)
-================================================== */
-
-    /* Note: Design for a width of 480px */
-    @media only screen and (min-width: 480px) and (max-width: 767px) {  
-	    
-    }
     
      /* #Mobile (size)
 ================================================== */  
@@ -1860,7 +2041,26 @@ html[xmlns] .slides {display: block;}
         box-shadow:none !important;
         text-shadow: none !important;
     }
-
+    
+    #header {
+	    width: 100%;
+	    position: relative;
+	    height: auto;
+	    min-height: inherit;
+    }
+    
+    #site-title {padding: 0;}
+    
+    #site-title img {
+	     width: 150px;
+    }
+    
+    #site-title h1 {font-size: 1em;}
+    
+    #access, #nav-top, #share, #page-carousel {display: none;}
+    
+    #content {width: 100%;padding-left: 0;}
+    
     a,
     a:visited {
         text-decoration: underline;

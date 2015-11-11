@@ -37,6 +37,8 @@ function plazarecoleta_setup() {
 	//custom size images
 	add_image_size( 'featured-home-image', 1300, 700, true );
 	add_image_size( 'gallery-page-image', 1000, 470, true );
+	add_image_size( 'thumbnail-dept', 300, 225, true );
+	add_image_size( 'thumbnail-floor', 300, 9999, false );
 	
 	// Create Theme Logotype Options Page
     require_once ( get_template_directory() . '/theme-admin/theme-options.php' );
@@ -55,11 +57,15 @@ function plazarecoleta_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'plazarecoleta' ),
+		'primary' => __( 'Navegación Lateral', 'plazarecoleta' ),
 	) );
 	
 	register_nav_menus( array(
-		'secondary' => __( 'Secondary Navigation', 'plazarecoleta' ),
+		'secondary' => __( 'Navegación Superior', 'plazarecoleta' ),
+	) );
+	
+	register_nav_menus( array(
+		'third' => __( 'Navegación Mobile', 'plazarecoleta' ),
 	) );
 	
 	// This theme allows users to set a custom background
@@ -592,16 +598,16 @@ if ( function_exists( 'add_theme_support' ) ) {
 add_post_type_support( 'page', 'excerpt');
 
 /**
- * Post Custom Flat
+ * Post Custom Depts
  *
  * @since plazarecoleta 1.0
  *
  * @return void
  */
  
-add_action('init', 'flat_register');
+add_action('init', 'depts_register');
  
-function flat_register () {
+function depts_register () {
  
 $labels = array(
 'name' => _x('Departamentos', 'post type general name'),
@@ -631,42 +637,9 @@ $args = array(
 'menu_icon'            => get_template_directory_uri() . '/images/elements/house.png'
 );
  
-     register_post_type( 'flat', $args );
+     register_post_type( 'depts', $args );
      flush_rewrite_rules();
 }
-
-/**
- * Custom Taxonomy Flat
- *
- * @since plazarecoleta 1.0
- *
- * @return void
- */
-add_action( 'init', 'create_book_tax', 0 );
-
-function create_book_tax() {
-
-	$labels = array(
-		'name'                       => _x( 'Tipos Realizados', 'Taxonomy General Name', 'plazarecoleta' ),
-		'singular_name'              => _x( 'Tipo', 'Taxonomy Singular Name', 'plazarecoleta' ),
-		'menu_name'                  => __( 'Tipos de Propiedad', 'plazarecoleta' ),
-		'all_items'                  => __( 'Todos los tipos', 'plazarecoleta' ),
-	);
-
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-
-	register_taxonomy( 'type', 'flat', $args );
-
-}
-
 /**
  * Admin menu custom
  *
