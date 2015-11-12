@@ -18,7 +18,9 @@ jQuery(function($){
 
   	function onLoadAndResize(){ 
 	  	 homeSlider();
-	  	 homeHeight();
+	  	 if(browserwidth > mobilewidth) {
+	  		 homeHeight();
+	  	 }
 	  	 pageGallery();
 	  	 pageCarousel();
 	  	 fancyboxImg();
@@ -35,18 +37,30 @@ jQuery(function($){
 			pauseOnHover: false,	 				
 			animationLoop: true,
 			animationSpeed: 1000,
+			start: function(){
+				if($('ul.slides').children().length == 1) {
+					$('.flex-control-nav').hide();
+				} else {
+					$('.flex-control-nav').show();
+				}
+				
+			},
 			after: function(){
-			  var new_img = $('.flex-active-slide').find('img').attr('src');
-			  console.log(new_img);
-			  $.backstretch('' + new_img + '');
+		      if(browserwidth > mobilewidth) {
+			 	 var new_img = $('.flex-active-slide').find('img').attr('src');
+			 	 console.log(new_img);
+			 	 $.backstretch('' + new_img + '');
+			  } 
 			}
 		  });
 		  
-		  /** Imagen de fondo **/
-		  if ($('body').hasClass('home')) {
-		  	var new_img = $('.flex-active-slide').find('img').attr('src');
-			$.backstretch(new_img, {duration: 1200, fade: 600});	 
-		  } 
+		  if(browserwidth > mobilewidth) {
+			  /** Imagen de fondo **/
+			  if ($('body').hasClass('home')) {
+			  	var new_img = $('.flex-active-slide').find('img').attr('src');
+				$.backstretch(new_img, {duration: 1200, fade: 600});	 
+			  } 
+		  }
 
 	}
 	

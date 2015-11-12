@@ -555,6 +555,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 #breadcrumbs {
 	background-color: #9fa0a3;
 	padding: .4em  0 .4em 1.6em;
+	clear: both;
 }
  
 #breadcrumbs p {
@@ -619,6 +620,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 	height: 9.5em;
 	width: 28%;
 	z-index: 1000;
+	box-sizing: border-box;
 }
 
 #home-gallery .text {
@@ -650,7 +652,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 	text-align: center;
 }
 
-#home-gallery img {
+#home-gallery img, #home-gallery .flex-control-nav {
 	display: none;
 }
 
@@ -799,6 +801,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #list-depts li img {
 	width: 100%;
+	height: auto;
 }
 
 #list-depts li .dept-title.with-m2 {
@@ -930,6 +933,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 .single-depts .entry-content-inner {
 	background: #e2e2e2;
 	padding: 2em;
+	clear: both;
 }
 
 .single-depts .entry-content-inner {
@@ -1410,7 +1414,7 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
  */
 
 #button-mobile {
-  padding: 1.4em 0.6em .8em;
+  padding: 1em 0.6em .6em;
   float: right;
   margin: 0;
   background: white;
@@ -1456,9 +1460,8 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		.two_thirds,
 		.three_fourths,
 		.one_fourth {width: 100%;}
-		.resize, #access, #menu-secondary,
-		#list-depts a.img span, .entry-floor .icon-search {display: none;}
-		.icon-print {display: none !important;}
+		.resize, #access, #nav-top,
+		#list-depts a.img span, .entry-floor .icon-search, #share {display: none;}
 		
 		.for-mobile {display: block;}
 		
@@ -1470,7 +1473,8 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		  padding: 0;
 		  margin: 0;}
 	  #content {padding-left: 0; width: 100%;}
-	  #site-title {padding: 1em 0 1em;}
+	  #site-title {padding: .7em 0 1em;}
+	  #site-title img {max-width: 40%;}
 	  #site-title h1 {margin: 0em auto;}
 	  
 	  #header .inner {
@@ -1484,7 +1488,8 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		  text-align: center; 
 		  color: white;
 		  background-color: rgba(119, 150, 46, .9);
-		  padding: 1em 0; width: 100%; 
+		  padding: .6em 0; 
+		  width: 100%; 
 		  display: inline-block;
 		  font-weight: bold; }
 	  
@@ -1494,18 +1499,21 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		  padding: .7em 0;}
 	  #access.active {display: block;}
 	  
+	  #home-gallery img {
+		  display: block;}
 	  #home-gallery .info {
 		margin: 0 auto;
-		width: 90%;}
+		position: relative;
+		float: left;
+		right: 0;
+		width: 100%;}
 		
 	  .home .backstretch {display: block !important;}
       .home .flexslider .slides img.this {display: none; position: absolute;}
       .home .flex-control-nav {display: none;}
       
       #page-gallery {width: 100%;}
-      #list-depts li {width: 40%; margin: 0 10% 3em 0px;}
-      #list-depts li { min-height:470px;}
-      #list-depts li img {width: 100%;}
+      #list-depts li {width: 100%; margin: 0 10% 3em 0px;}
       
       #children-content li {
 	      width: 82%; 
@@ -1518,20 +1526,41 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 	  
 	  form.wpcf7-form {width: 100%;}
 		  
-	  .home #footer {bottom: -3.8em;}
-	  #footer-content p {font-size: .8rem;}
+	  .home #footer {
+		  bottom: 0;
+		  position: relative;
+		  clear: both;}
+	  .contact-info-mobile {text-align: center;
+		  margin: .6em 0;}
+	  #footer-content p {font-size: .75rem; text-align: center;}
 	
 }
 
 /* medium displays menos de 960px */
 @media only screen and (max-width: 60em) { 
+	#header {
+    	width: 24%;}
+	
+	#content {
+		padding-left: 26%;
+		width: 74%;}
+	
+	#nav-top {
+	      margin-left: 26%;
+	      width: 73%;}
 	#nav-top li {
-		padding: 1.3em 1.2em;
-	}
+		padding: 1.3em 1.2em;}
 	
 	#nav-top li:before {
-		display: none;
-	}
+		display: none;}
+		
+	#site-title img {
+		max-width: 80%;}
+		
+	#list-depts li {width: 40%; margin: 0 10% 3em 0px;}
+	
+	#children-content li h3 a {font-size: .9em;}
+	
 }
 
 /* large displays menos de 1025px */

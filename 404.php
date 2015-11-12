@@ -13,7 +13,7 @@ get_header(); ?>
 			<article style="margin-bottom:60px;" id="post-0" class="post error404 not-found" role="main">
 				<h1 class="entry-title"><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'plazarecoleta' ); ?></h1>
 				<div class="entry-content">
-					<p><?php _e( 'Parece que no podemos encontrar lo que estás buscando. Nuestro sitio web ha cambiado recientemente. <br/> Puedes utilizar el menú principal o inferior para encontrar información sobre nuestros proyectos.', 'plazarecoleta' ); ?></p>
+					<p style="text-align: center;"><?php _e( 'Parece que no podemos encontrar lo que estás buscando. <br/> Puedes utilizar el menú principal o lateral para encontrar información sobre nuestro proyecto.', 'plazarecoleta' ); ?></p>
 				</div>
 
 			</article>

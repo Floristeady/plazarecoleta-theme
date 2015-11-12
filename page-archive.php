@@ -96,7 +96,7 @@ get_header(); ?>
 		
 					<h3 class="dept-title <?php if(get_field('m2_dept')) : ?> with-m2<?php endif; ?>"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'allcampers' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 					<?php if(get_field('m2_dept')) : ?>
-					<h4> <?php the_field('m2_dept'); ?> M<sup>2</sup><?php _e(' útiles', 'plazarecoleta');?> </h4>
+					<h4> <?php the_field('m2_dept'); ?> m<sup>2</sup> </h4>
 					<?php endif; ?>
 					<a class="button" href="<?php the_permalink(); ?>"><?php _e('Saber Más', 'plazarecoleta');?></a>
 					 

@@ -36,10 +36,12 @@
 			<nav id="nav-top">
 				<?php  wp_nav_menu( array( 'container_id' => 'menu-secondary', 'theme_location' => 'secondary', 'sort_column' => 'menu_order' ) ); ?>
 						
-				<?php 
-				if ( !is_front_page() && !is_home() ) {
-					include('include/breadcrumbs.php'); 
-				} ?>
+			<?php 
+			  if (is_singular( 'depts' )) { 
+				include('include/breadcrumbs-depts.php'); 
+			 } else if ( !is_front_page() && !is_home() ) {
+				include('include/breadcrumbs.php'); 
+			 } ?>
 
 			</nav>
 			
@@ -68,6 +70,15 @@
 	               </span>
 			       <span class="text"><?php _e('Menú', 'plazarecoleta') ?></span>
 			    </a>
+			    
+			    <div class="for-mobile">
+			    <?php 
+				  if (is_singular( 'depts' )) { 
+					include('include/breadcrumbs-depts.php'); 
+				 } else if ( !is_front_page() && !is_home() ) {
+					include('include/breadcrumbs.php'); 
+				 } ?>
+			    </div>
 			    
 			    <nav id="access" role="navigation" class="clearfix">
 				  	<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>

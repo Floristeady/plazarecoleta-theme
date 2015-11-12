@@ -26,6 +26,8 @@ get_header(); ?>
 						<?php foreach($rows as $row) { ?>
 		                
 					 		<li> 
+					 			<?php $attachment_id = $row['home_gallery_image'];
+					echo wp_get_attachment_image( $attachment_id, 'featured-home-image'); ?>
 						 		 <?php if($row['home_link_gallery']) { //si tiene link ?>	
 							 		<a alt="Saber más" href="<?php echo $row['home_link_gallery'] ?>" class="info">
 
@@ -44,10 +46,6 @@ get_header(); ?>
 							 		</span>
 					 		       
 					 		       <?php } ?>
-					 		
-					 		 <?php $attachment_id = $row['home_gallery_image'];
-					echo wp_get_attachment_image( $attachment_id, 'featured-home-image'); ?>
-		
 						<?php  }  
 							
 						} 

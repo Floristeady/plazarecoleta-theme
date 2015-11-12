@@ -27,11 +27,11 @@ get_header(); ?>
 				<?php endif; ?> 
 				
 				<?php if(get_field('m2_dept')) : ?>	
-				  	<span><?php the_field('m2_dept'); ?> M<sup>2</sup><?php _e(' útiles', 'plazarecoleta');?> | </span>
+				  	<span><?php the_field('m2_dept'); ?> m<sup>2</sup><?php _e(' útiles', 'plazarecoleta');?> | </span>
 				<?php endif; ?> 
 				
 				<?php if(get_field('m2total_dept')) : ?>	
-					<span><?php the_field('m2total_dept'); ?> M<sup>2</sup><?php _e(' totales', 'plazarecoleta');?></span> <?php endif; ?> </h4>
+					<span><?php the_field('m2total_dept'); ?> m<sup>2</sup><?php _e(' totales', 'plazarecoleta');?></span> <?php endif; ?> </h4>
 				<?php endif; ?> 
 		     
 		</header>
