@@ -52,7 +52,7 @@ get_header(); ?>
 			
 				<?php if($rows) { ?>
 				
-				<?php echo '<ul id="list-documents" class="one_third">';
+				<?php echo '<div class="one_third"><ul id="list-documents">';
 				 
 					foreach($rows as $row) { ?>
 
@@ -64,7 +64,7 @@ get_header(); ?>
 
 					<?php  } ;  
 					
-				echo '</ul>'; }  ?>
+				echo '</ul></div>'; }  ?>
             
 			
 			<?php edit_post_link( __( 'Editar', 'plazarecoleta' ), '', '' ); ?>

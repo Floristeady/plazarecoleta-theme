@@ -140,14 +140,15 @@ jQuery(function($){
  Execution
 **************************/
   $(document).ready(function(){
-
-    onLoadAndResize();
-    getbrowserwidth();
+  	
+  	getbrowserwidth();
+    onLoadAndResize();    
     menuMobile();
         
    });
    
    $(window).resize(function(){
+	 getbrowserwidth();
      onLoadAndResize();
    });
   

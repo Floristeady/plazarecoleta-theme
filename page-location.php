@@ -14,7 +14,7 @@ get_header(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<div class="thumbnail">
-			<?php the_post_thumbnail( 'gallery-page-image' ); ?>
+			<?php the_post_thumbnail( 'thumbnail-page' ); ?>
 			<?php include('include/share.php'); ?>
 		</div>
 		

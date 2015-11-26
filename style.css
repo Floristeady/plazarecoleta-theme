@@ -585,7 +585,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #info {
 	position: absolute;
-	bottom: 4em;
+	bottom: 5em;
 	padding: 0 10%;
 	width: 80%;
 }
@@ -780,7 +780,6 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #list-depts {
 	margin: 0.2em auto 4em;
-	padding: 0px;
 	list-style: none;
 	width: 80%;
 }
@@ -788,11 +787,11 @@ nav#access ul.sub-menu, nav#access ul.children {
 #list-depts li {	
 	background: #eff1f5;
 	text-align: center;
-	margin: 0 40px 3em 0px;
+	margin: 0 1.5% 3em 1.5%;
 	float: left;
 	padding: 0 0 1em;
 	position: relative;
-	width: 250px;
+	width: 27%;
 }
 
 #list-depts li .inner {
@@ -823,6 +822,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 #list-depts li .img {
 	float: left;
 	margin: 0 0 1em;
+	width: 100%;
 }
 
 #list-depts a.img span, .entry-floor .icon-search {
@@ -845,6 +845,10 @@ nav#access ul.sub-menu, nav#access ul.children {
 	z-index: 10;
 	top: 28%;
 	background-repeat: no-repeat;
+}
+
+.entry-floor .icon-search {
+	top: 45%;
 }
 
 #list-depts a:hover.img img,  .entry-floor:hover .icon-search {
@@ -1018,6 +1022,10 @@ nav#access ul.sub-menu, nav#access ul.children {
 	width: 80%;
 }
 
+.page-template-page-parent .entry-content {
+	margin: 1em auto 2em;	
+}
+
 .entry-content-inner {
 	margin: 1.5em 0 0;
 }
@@ -1133,6 +1141,20 @@ h2.entry-excerpt {
 .entry-utility {
 	float: left;
 	clear: left;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* =Widgets
@@ -1363,6 +1385,29 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 	clear: both;
 }
 
+table {
+	table-layout: auto;
+	background: #FFFFFF; 
+    border: solid 1px #DDDDDD;
+}
+
+table th, table td {
+	font-size: .85rem;
+	color: #555555;
+	padding: .4em .5em;
+	text-align: left;
+	display: table-cell;
+}
+
+table th {
+	border-bottom: 1px solid #DDDDDD;
+	font-size: .9rem;
+}
+
+table tr:nth-of-type(even) {
+    background: #F9F9F9;
+}
+
 /* =Hack webkit
 ----------------------------------------------- */
 
@@ -1448,7 +1493,7 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 
 /* medium displays  menos de 641px*/  
 @media only screen and (max-width: 40.063em) { 
-	
+	#list-depts li {width: 100% !important; margin: 0 10% 3em 0px !important;}
 }
 
 /* medium displays menos de 767px */
@@ -1467,14 +1512,14 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		
 	  #header {
 		  position: relative; 
-		  width: 100%; 
+		  width: 100% !important; 
 		  height: auto; 
 		  min-height: inherit;
 		  padding: 0;
 		  margin: 0;}
-	  #content {padding-left: 0; width: 100%;}
+	  #content {padding-left: 0; width: 100% !important;padding-left: 0 !important;}
 	  #site-title {padding: .7em 0 1em;}
-	  #site-title img {max-width: 40%;}
+	  #site-title img {max-width: 40% !important;}
 	  #site-title h1 {margin: 0em auto;}
 	  
 	  #header .inner {
@@ -1506,23 +1551,21 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 		position: relative;
 		float: left;
 		right: 0;
-		width: 100%;}
+		width: 100% !important;}
 		
 	  .home .backstretch {display: block !important;}
       .home .flexslider .slides img.this {display: none; position: absolute;}
       .home .flex-control-nav {display: none;}
       
       #page-gallery {width: 100%;}
-      #list-depts li {width: 100%; margin: 0 10% 3em 0px;}
-      
+
       #children-content li {
 	      width: 82%; 
 	      margin-bottom: 20px;}
 	      
-	  #share {
-		  top: 0;
-		  margin: 0;
-		  right: 0;}
+	   #list-documents {
+		   width: 100%;
+	   }
 	  
 	  form.wpcf7-form {width: 100%;}
 		  
@@ -1557,15 +1600,20 @@ form span.wpcf7-not-valid-tip, form span.wpcf7-not-valid-tip-no-ajax  {
 	#site-title img {
 		max-width: 80%;}
 		
-	#list-depts li {width: 40%; margin: 0 10% 3em 0px;}
-	
+	#home-gallery .info {
+		width: 40%;}
+			
 	#children-content li h3 a {font-size: .9em;}
+	#share {padding: 7px 10px 8px; }
 	
 }
 
 /* large displays menos de 1025px */
 @media only screen and (max-width: 64.063em) {
 	#home-gallery .text h1 {font-size: 1.4em;}
+	
+	#list-depts {padding: 0px;}
+	#list-depts li {width: 40%; margin: 0 5% 3em 5%;}
 	
 }
 

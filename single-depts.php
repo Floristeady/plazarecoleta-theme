@@ -27,11 +27,11 @@ get_header(); ?>
 				<?php endif; ?> 
 				
 				<?php if(get_field('m2_dept')) : ?>	
-				  	<span><?php the_field('m2_dept'); ?> m<sup>2</sup><?php _e(' útiles', 'plazarecoleta');?> | </span>
+				  	<span><?php the_field('m2_dept'); ?> m<sup>2</sup><?php _e(' útiles', 'plazarecoleta');?> </span>
 				<?php endif; ?> 
 				
 				<?php if(get_field('m2total_dept')) : ?>	
-					<span><?php the_field('m2total_dept'); ?> m<sup>2</sup><?php _e(' totales', 'plazarecoleta');?></span> <?php endif; ?> </h4>
+					<span>| <?php the_field('m2total_dept'); ?> m<sup>2</sup><?php _e(' totales', 'plazarecoleta');?></span> <?php endif; ?> </h4>
 				<?php endif; ?> 
 		     
 		</header>
@@ -45,21 +45,26 @@ get_header(); ?>
 				}
 				?>
             
-            <div class="<?php if(get_field('m2total_dept')) : ?>two_thirds <?php endif; ?>">
+            <div class="<?php if(get_field('floor_dept')) : ?>one_half <?php endif; ?>">
 				<div class="entry-content-inner">
 					<?php the_content(); ?>
             	</div>
             </div>
-            <?php if(get_field('m2total_dept')) : 
+            <?php if(get_field('floor_dept')) : 
+	            $linkcard = wp_get_attachment_image_src( get_field('floor_card'), 'original' );  
 	            $link = wp_get_attachment_image_src( get_field('floor_dept'), 'original' );  
             ?>
-            <div class="entry-floor one_third">
-	            <a href="<?php echo $link[0] ?>" class="fancybox" rel="group">
-		         <span class="icon-search"></span>
+            <div class="entry-floor one_half">
+	            <?php if(get_field('floor_card')) : ?>
+	             	<a href="<?php echo $linkcard[0] ?>" class="fancybox" rel="group">
+				 	<span class="icon-search"></span>
+		        <?php endif; ?>
 	            <?php $attachment_id = get_field('floor_dept');
 					echo wp_get_attachment_image( $attachment_id, 'thumbnail-floor'); ?>
 					<span class="text"><?php _e('Ver Planta', 'plazarecoleta');?></span>
-				</a>
+				<?php if(get_field('floor_card')) : ?>
+					</a>
+				<?php endif; ?>
             </div>
             <?php endif; ?>
 				

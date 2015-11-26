@@ -35,10 +35,11 @@ function plazarecoleta_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	//custom size images
-	add_image_size( 'featured-home-image', 1300, 700, true );
+	add_image_size( 'featured-home-image', 1600, 900, true );
 	add_image_size( 'gallery-page-image', 1000, 470, true );
+	add_image_size( 'thumbnail-page', 1000, 9999, false );
 	add_image_size( 'thumbnail-dept', 300, 225, true );
-	add_image_size( 'thumbnail-floor', 300, 9999, false );
+	add_image_size( 'thumbnail-floor', 500, 9999, false );
 	
 	// Create Theme Logotype Options Page
     require_once ( get_template_directory() . '/theme-admin/theme-options.php' );
@@ -660,7 +661,15 @@ function edit_admin_menus() {
 }
 add_action( 'admin_menu', 'edit_admin_menus' );
 
-function get_id_by_slug($page_slug) {
+/**
+ * Get page ID
+ *
+ * @since plazarecoleta 1.0
+ *
+ * @return void
+ */
+ 
+ function get_id_by_slug($page_slug) {
 	$page = get_page_by_path($page_slug);
 	if ($page) {
 		return $page->ID;
