@@ -37,6 +37,7 @@ function plazarecoleta_setup() {
 	//custom size images
 	add_image_size( 'featured-home-image', 1600, 900, true );
 	add_image_size( 'gallery-page-image', 1000, 470, true );
+	add_image_size( 'thumbnail-carrusel', 200, 200, true );
 	add_image_size( 'thumbnail-page', 1000, 9999, false );
 	add_image_size( 'thumbnail-dept', 300, 225, true );
 	add_image_size( 'thumbnail-floor', 500, 9999, false );
@@ -677,5 +678,14 @@ add_action( 'admin_menu', 'edit_admin_menus' );
 		return null;
 	}
 }
+
+/**
+ * Hide Admin Bar 
+ *
+ * @since nmycia 1.0
+ *
+*/
+show_admin_bar(false);
+ 
 
 ?>

@@ -87,13 +87,30 @@ jQuery(function($){
 	}
 	
 	function pageCarousel() {
-		$('#page-carousel').flexslider({
-		    animation: "slide",
-		    animationLoop: false,
-		    controlNav: false,
-		    itemWidth: 100,
-		    itemMargin: 10
-	  	});
+		if(browserwidth > mobilewidth) {
+			$('#page-carousel').flexslider({
+			    animation: "slide",
+			    animationLoop: false,
+			    slideshow: false,
+			    controlNav: false,
+			    directionNav: false,
+			    itemWidth: 110,
+			    direction: "vertical", 
+			    itemMargin: 10
+		  	});
+	  	} else {
+		  	$('#page-carousel').flexslider({
+			    animation: "slide",
+			    animationLoop: false,
+			    slideshow: false,
+			    controlNav: false,
+			    directionNav: false,
+			    itemWidth: 100,
+			    direction: "horizontal", 
+			    itemMargin: 10
+		  	});
+
+	  	}
   	}
 		
 	/*

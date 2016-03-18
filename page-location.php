@@ -30,7 +30,7 @@ get_header(); ?>
 	 		<li> 
 		 		<a href="<?php echo $link[0] ?>" class="fancybox" rel="group">
 		 		<?php $attachment_id = $row['image_gallery'];
-					echo wp_get_attachment_image( $attachment_id, 'thumbnail'); ?>
+					echo wp_get_attachment_image( $attachment_id, 'thumbnail-carrusel'); ?>
 		 		</a>
 		    </li>
 		    

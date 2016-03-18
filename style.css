@@ -497,7 +497,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 #nav-top li {
 	display: inline-block;
 	text-transform: uppercase;
-	padding: 1.3em 1.8em;
+	padding: .5em 1.8em;
 	font-size: .85em;
 	border-right: 1px solid #d3d4d8;
 }
@@ -585,7 +585,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 
 #info {
 	position: absolute;
-	bottom: 5em;
+	bottom: 10em;
 	padding: 0 10%;
 	width: 80%;
 }
@@ -616,11 +616,12 @@ nav#access ul.sub-menu, nav#access ul.children {
 	background: #fcfbfa;
 	border: 4px solid #a7bf38;
 	right: 20px;
-	bottom: .2em;
-	height: 9.5em;
-	width: 28%;
+	bottom: 1em;
+	/*height: 9.5em;*/
+	width: 30%;
 	z-index: 1000;
 	box-sizing: border-box;
+	max-width: 350px;
 }
 
 #home-gallery .text {
@@ -632,7 +633,7 @@ nav#access ul.sub-menu, nav#access ul.children {
 }
 
 #home-gallery .text h1, #home-gallery .text h2, #home-gallery .text h3, #home-gallery .text h4, #home-gallery .text h5, #home-gallery .text h6 {
-	font-size: 1.8em;
+	font-size: 1.6em;
 	color: #565759;
 	margin: 0;
 	text-align: center;
@@ -652,8 +653,18 @@ nav#access ul.sub-menu, nav#access ul.children {
 	text-align: center;
 }
 
-#home-gallery img, #home-gallery .flex-control-nav {
+#home-gallery .slides img, #home-gallery .flex-control-nav {
 	display: none;
+}
+
+.serviu-logo {
+	position: absolute;
+	right: 2%;
+	top: 80px;
+}
+
+.serviu-logo img {
+	max-width: 160px;
 }
 
 /* Control Nav */
@@ -756,8 +767,10 @@ nav#access ul.sub-menu, nav#access ul.children {
  */
  
 .thumbnail {
-	width: 99.2%;
+	/*width: 99.2%;*/
+	width: 90%;
 	position: relative;
+	float: left;
 } 
  
 .thumbnail img {
@@ -766,12 +779,30 @@ nav#access ul.sub-menu, nav#access ul.children {
 }
 
 #page-carousel {
-	width: 90%;
+	/*width: 90%;*/
+	width: 10%;
 	margin: .5em auto 0;
+	float: right;
 }
 
 #page-carousel li {
-	margin: 0 .5em;
+	margin: 0 .5em .5em;
+	float: none !important;
+}
+
+.page-template-page-location .entry-content {
+	clear: both;
+	margin: 1em auto 1em;
+	width: 100%;
+}
+
+.page-template-page-location .thumbnail {
+	background: white;
+	text-align: center;
+}
+
+.page-template-page-location .thumbnail img {
+	max-width: 800px; 
 }
 
 /*
@@ -1202,11 +1233,11 @@ h2.entry-excerpt {
 	left: 0px;	
 	width:100%;
 	z-index: 4;
-	height: 44px;
+	/*height: 44px;*/
 }
 
 .home #footer {
-	bottom: 0px;
+	bottom: 0em;
 }
 
 #footer-content {
@@ -1510,72 +1541,101 @@ table tr:nth-of-type(even) {
 		
 		.for-mobile {display: block;}
 		
-	  #header {
-		  position: relative; 
-		  width: 100% !important; 
-		  height: auto; 
-		  min-height: inherit;
-		  padding: 0;
-		  margin: 0;}
-	  #content {padding-left: 0; width: 100% !important;padding-left: 0 !important;}
-	  #site-title {padding: .7em 0 1em;}
-	  #site-title img {max-width: 40% !important;}
-	  #site-title h1 {margin: 0em auto;}
+	#header {
+	  position: relative; 
+	  width: 100% !important; 
+	  height: auto; 
+	  min-height: inherit;
+	  padding: 0;
+	  margin: 0;}
+	#content {padding-left: 0; width: 100% !important;padding-left: 0 !important;}
+	#site-title {padding: .7em 0 1em;}
+	#site-title img {max-width: 40% !important;}
+	#site-title h1 {margin: 0em auto;}
+	
+	#header .inner {
+	  width: 100%;
+	  float: left;
+	}
+	
+	#button-mobile {
+	  font-size: 1.2em; 
+	  text-transform: uppercase; 
+	  text-align: center; 
+	  color: white;
+	  background-color: rgba(119, 150, 46, .9);
+	  padding: .6em 0; 
+	  width: 100%; 
+	  display: inline-block;
+	  font-weight: bold; }
+	
+	#access {padding: 0;}
+	#access li { 
+	  	float: none; 
+	  	padding: .7em 0;}
+	#access.active {display: block;}
+	
+	.home .backstretch {display: block !important;}
+	.home .flexslider .slides img.this {display: none; position: absolute;}
+	.home .flex-control-nav {display: none;}
+	
+	#page-gallery {
+	  	width: 100%;}
+	
+	#children-content li {
+	 	 width: 82%; 
+	 	 margin-bottom: 20px;}
 	  
-	  #header .inner {
-		  width: 100%;
-		  float: left;
-	  }
+	#list-documents {
+	  	 width: 100%;}
+	
+	form.wpcf7-form {
+	 	 width: 100%;}
 	  
-	  #button-mobile {
-		  font-size: 1.2em; 
-		  text-transform: uppercase; 
-		  text-align: center; 
-		  color: white;
-		  background-color: rgba(119, 150, 46, .9);
-		  padding: .6em 0; 
-		  width: 100%; 
-		  display: inline-block;
-		  font-weight: bold; }
-	  
-	  #access {padding: 0;}
-	  #access li { 
-		  float: none; 
-		  padding: .7em 0;}
-	  #access.active {display: block;}
-	  
-	  #home-gallery img {
-		  display: block;}
-	  #home-gallery .info {
+	.home #footer {
+	 	 bottom: 0;
+	 	 position: relative;
+	 	 clear: both;}
+	.contact-info-mobile {
+	  	text-align: center;
+	  	margin: .6em 0;}
+	  	
+	#footer {
+		bottom: 0;
+		position: relative;
+		clear: both;}
+	#footer-content p {
+		  font-size: .75rem; 
+		  text-align: center;}
+	
+	#home-gallery .info {
 		margin: 0 auto;
 		position: relative;
 		float: left;
 		right: 0;
 		width: 100% !important;}
-		
-	  .home .backstretch {display: block !important;}
-      .home .flexslider .slides img.this {display: none; position: absolute;}
-      .home .flex-control-nav {display: none;}
-      
-      #page-gallery {width: 100%;}
-
-      #children-content li {
-	      width: 82%; 
-	      margin-bottom: 20px;}
-	      
-	   #list-documents {
-		   width: 100%;
-	   }
+	#home-gallery .text {
+	   	padding: 1em 2% 1em;}
+	#home-gallery .slides img {
+	  	display: block;}
+	#home-gallery .text h1 {
+	  	font-size: 1.1em;}
 	  
-	  form.wpcf7-form {width: 100%;}
-		  
-	  .home #footer {
-		  bottom: 0;
-		  position: relative;
-		  clear: both;}
-	  .contact-info-mobile {text-align: center;
-		  margin: .6em 0;}
-	  #footer-content p {font-size: .75rem; text-align: center;}
+	.serviu-logo {
+	  	top: 10px;
+	  	z-index: 100;
+	  	right: 10px;}
+	.serviu-logo img {
+		max-width: 80px;}
+		
+	#page-carousel {
+		width: 100%;}
+	
+	.thumbnail {
+		width: 100%;}
+	
+	#page-carousel li {
+		float: left !important;}
 	
 }
 
@@ -1592,7 +1652,7 @@ table tr:nth-of-type(even) {
 	      margin-left: 26%;
 	      width: 73%;}
 	#nav-top li {
-		padding: 1.3em 1.2em;}
+		padding: .5em 1.2em;}
 	
 	#nav-top li:before {
 		display: none;}
@@ -1601,7 +1661,7 @@ table tr:nth-of-type(even) {
 		max-width: 80%;}
 		
 	#home-gallery .info {
-		width: 40%;}
+		width: 50%;}
 			
 	#children-content li h3 a {font-size: .9em;}
 	#share {padding: 7px 10px 8px; }
@@ -1610,7 +1670,7 @@ table tr:nth-of-type(even) {
 
 /* large displays menos de 1025px */
 @media only screen and (max-width: 64.063em) {
-	#home-gallery .text h1 {font-size: 1.4em;}
+	/*#home-gallery .text h1 {font-size: 1.4em;}*/
 	
 	#list-depts {padding: 0px;}
 	#list-depts li {width: 40%; margin: 0 5% 3em 5%;}
@@ -1632,10 +1692,23 @@ table tr:nth-of-type(even) {
 /* large displays más de 1025px */
 @media only screen and (min-width: 64.063em) { 
 	#home-gallery .info {
-		width: 25%;
+		width: 30%;
 	}
 }
 
+/* más de 1025px */
+@media only screen and (min-width: 1500px) { 
+	.page-template-page-location #footer {
+		bottom: -2em;
+	}
+}
+
+/* más de 1025px */
+@media only screen and (min-width: 1620px) { 
+	.page-template-page-location #footer {
+		bottom: 0;
+	}
+}
 
 
 /* ==========================================================================

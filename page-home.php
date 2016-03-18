@@ -19,6 +19,8 @@ get_header(); ?>
 				
 				<?php  $rows = get_field('home_gallery');  ?>
 				
+					<div class="serviu-logo"><img src="<?php echo get_template_directory_uri(); ?>/images/elements/sellominvu_blanco.png" alt="SERVIU"></div>
+				
 					<?php echo '<ul class="slides">';?>
 				
 						<?php if($rows) { ?>
